@@ -1,0 +1,15 @@
+/*
+ * Navigation bar
+ */
+
+ header {
+   width: 100%;
+   background-color: #f4ae2e;
+   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+   background-repeat: repeat; /* Ensures the texture tiles properly */
+   background-size: auto; /* Adjust based on texture pattern */
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+ }
