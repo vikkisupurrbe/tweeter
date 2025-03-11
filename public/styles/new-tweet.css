@@ -1,0 +1,38 @@
+/*
+ * New tweet
+ */
+
+ form {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+label {
+   font-family: "Source Sans 3", sans-serif;
+   font-weight: 600;
+ }
+
+textarea {
+  background-color: inherit;
+  border-top-style: hidden;
+  border-left-style: hidden;
+  border-right-style: hidden;
+  border-bottom-width: 4px;
+  margin-bottom: 20px;
+}
+
+form div {
+  display: flex;
+  justify-content: space-between;
+}
+
+form button {
+  background-color: #4056A1;
+  color: #ffffff;
+  font-family: "Bungee", sans-serif;
+}
+
+.counter {
+  font-family: "Bungee", sans-serif;
+}
