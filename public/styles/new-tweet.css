@@ -20,6 +20,8 @@ textarea {
   border-right-style: hidden;
   border-bottom-width: 4px;
   margin-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
 
 form div {
