@@ -13,8 +13,6 @@ $(document).ready(function() {
 
     // traverse down to get counter
     const counter = form.find(".counter");
-    console.log($(".counter").val());
-    
 
     // update counter value while typing
     const remainingCount = 140 - (value.length);
