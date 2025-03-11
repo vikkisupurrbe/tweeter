@@ -24,8 +24,8 @@ span {
   background: none;
   border: none;
   color:#ffffff;
-  p {
-    margin: 0px;
-  }
 }
 
+.tweet-button p {
+  margin: 0px
+}
