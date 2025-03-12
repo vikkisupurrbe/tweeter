@@ -58,7 +58,10 @@ article p {
   padding-left: 10px;
   padding-right: 10px;
   padding-bottom: 10px;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: 600;
 }
+
 
 article footer {
   display: flex;
@@ -72,6 +75,18 @@ article footer {
 .timestamp {
   font-size: 16px;
   align-self: flex-start;
+}
+
+.fa-flag {
+  color: #4057a1b3;
+}
+
+.fa-reply {
+  color: #4057a1b3;
+}
+
+.fa-heart {
+  color: #4057a1b3;
 }
 
 .fa-flag:hover {
