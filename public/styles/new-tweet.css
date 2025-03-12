@@ -18,7 +18,7 @@ textarea {
   border-top-style: hidden;
   border-left-style: hidden;
   border-right-style: hidden;
-  border-bottom-width: 4px;
+  border-bottom: 4px solid #545149;
   margin-bottom: 20px;
   padding-top: 10px;
   padding-bottom: 10px;
