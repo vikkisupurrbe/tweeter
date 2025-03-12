@@ -6,9 +6,11 @@
 
 // send a new tweet
 $(document).ready(function () {
+  
   console.log("Listening tweet form.")
   // select the form id tweet-form to listen for the submit event
   const tweetForm = document.querySelector("#tweet-form");
+
   tweetForm.addEventListener("submit", async function (event) {
     event.preventDefault(); // prevent default form submission behavior
     
@@ -28,6 +30,7 @@ $(document).ready(function () {
       error: function(xhr, status, error) {
         console.log("Error submitting tweet:", xhr.responseText);
       }
+      
     })
   });
 
@@ -89,7 +92,7 @@ const renderTweets = function(tweets) {
   //  $("#tweets-container").empty();
   for (const tweet of tweets) {
     const $tweetElement = createTweetElement(tweet);
-    $("#tweets-container").append($tweetElement);
+    $("#tweets-container").prepend($tweetElement);
     }
   }
   
