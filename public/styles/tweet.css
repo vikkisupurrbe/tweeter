@@ -74,6 +74,14 @@ article footer {
   align-self: flex-start;
 }
 
-i:hover {
+.fa-flag:hover {
+  color: #f4ae2e;
+}
+
+.fa-reply:hover {
+  color: #f4ae2e;
+}
+
+.fa-heart:hover {
   color: #f4ae2e;
 }
