@@ -34,6 +34,8 @@ $(document).ready(function () {
         console.log(`Tweet submitted successfully: ${formData}`, response);
         // clear the form after a successful submission
         $("#tweet-text").val(""); 
+        // render the last tweet
+        loadTweets();
       },
       error: function(xhr, status, error) {
         console.log("Error submitting tweet:", xhr.responseText);
@@ -79,7 +81,6 @@ $(document).ready(function () {
     }
 
   // renderTweets(data);
-
   const loadTweets = function() {
     $.ajax({
       url: "/api/tweets",
@@ -89,9 +90,7 @@ $(document).ready(function () {
       }
     });
   };
-
   loadTweets()
-
 });
 
 // form validation function
