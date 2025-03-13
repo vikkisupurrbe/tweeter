@@ -14,6 +14,16 @@ $(document).ready(function () {
   tweetForm.addEventListener("submit", async function (event) {
     event.preventDefault(); // prevent default form submission behavior
     
+    // disallow submission when the tweet area is empty, or > 140 limit
+    if ($("#tweet-text").val().length === 0 ) {
+      alert("Tweet content cannot be empty!");
+      return;
+    }
+    if ($("#tweet-text").val().length > 140) {
+      alert("Character count cannot go over 140!");
+      return;
+    }
+
     // serialize the form data
     const formData = $(this).serialize();
 
@@ -24,7 +34,7 @@ $(document).ready(function () {
       data: formData,
       success: function (response) {
         console.log(`Tweet submitted successfully: ${formData}`, response);
-        // clear the form after submission
+        // clear the form after a successful submission
         $("#tweet-text").val(""); 
       },
       error: function(xhr, status, error) {
