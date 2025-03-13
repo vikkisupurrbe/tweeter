@@ -15,13 +15,23 @@ $(document).ready(function () {
     event.preventDefault(); // prevent default form submission behavior
     
     // disallow submission when the tweet area is empty, or > 140 limit
-    if ($("#tweet-text").val().length === 0 ) {
-      alert("Tweet content cannot be empty!");
-      return;
+    const tweetText = $("#tweet-text").val().trim(); // trim spaces
+    // form validation function
+    const isTweetValid = function(tweet) {
+      if (tweet.length === 0) {
+        alert("Tweet content cannot be empty!");
+        return false;
+      }
+      if (tweet.length > 140) {
+        alert("Character count cannot go over 140!");
+        return false;
+      }
+      return true;
     }
-    if ($("#tweet-text").val().length > 140) {
-      alert("Character count cannot go over 140!");
-      return;
+
+    // validate tweet before sending
+    if (!isTweetValid(tweetText)) {
+      return; // stop execution
     }
 
     // serialize the form data
@@ -40,12 +50,11 @@ $(document).ready(function () {
       error: function(xhr, status, error) {
         console.log("Error submitting tweet:", xhr.responseText);
       }
-
     })
   });
 
   // dynamically fetching tweets
-  // Fake data taken from initial-tweets.json
+  // fake data taken from initial-tweets.json
   const createTweetElement = function(tweet) {
     let $tweet = $(`
       <article class="tweet">
