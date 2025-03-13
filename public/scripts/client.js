@@ -6,7 +6,9 @@
 
 // send a new tweet
 $(document).ready(function () {
-  
+  // show the error message div
+  const errorDiv = $("#tweet-error");
+
   console.log("Listening tweet form.")
   // select the form id tweet-form to listen for the submit event
   const tweetForm = document.querySelector("#tweet-form");
@@ -33,7 +35,9 @@ $(document).ready(function () {
       success: function (response) {
         console.log(`Tweet submitted successfully: ${formData}`, response);
         // clear the form after a successful submission
-        $("#tweet-text").val(""); 
+        $("#tweet-text").val("");
+        // hide error if it;s a successful submission
+        errorDiv.slideUp();
         // render the last tweet
         loadTweets();
       },
@@ -98,17 +102,26 @@ $(document).ready(function () {
     });
   };
   loadTweets()
-});
+  
+  // form validation function
+  const isTweetValid = function(tweet) {
+    if (tweet.length === 0) {
+      showError("Tweet content cannot be empty!");
+      return false;
+    }
+    if (tweet.length > 140) {
+      showError("Character count cannot go over 140!");
+      return false;
+    }
+    return true;
+  }
+  
+  // display error message function
+  function showError(message) {
+    errorDiv.html(
+      `<i class="fa-solid fa-triangle-exclamation"></i> <span>${message}</span>`
+    );
+    errorDiv.slideDown();
+  }
 
-// form validation function
-const isTweetValid = function(tweet) {
-  if (tweet.length === 0) {
-    alert("Tweet content cannot be empty!");
-    return false;
-  }
-  if (tweet.length > 140) {
-    alert("Character count cannot go over 140!");
-    return false;
-  }
-  return true;
-}
+});

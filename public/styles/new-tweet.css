@@ -38,3 +38,26 @@ form button {
 .counter {
   font-family: "Bungee", sans-serif;
 }
+
+/*
+ * Error message
+ */
+
+.tweet-error {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background-color: #ffdddd;
+  color: #d8000c;
+  border: 1px solid #d8000c;
+  padding: 10px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  font-family: "Source Sans 3", sans-serif;
+  font-weight: bold;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}

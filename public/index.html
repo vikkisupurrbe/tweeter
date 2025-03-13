@@ -33,7 +33,7 @@
 
     <!-- Top nav bar (fixed) -->
     <nav>
-      <span>tweeter</span>
+      <span class="logo">tweeter</span>
       <button class="tweet-button">
         <p><strong>Write</strong> a new tweet</p>
         <i class="fa-solid fa-angles-down"></i>
@@ -56,6 +56,12 @@
       <!-- Write a tweet -->
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
+        <!-- Error message -->
+        <div id="tweet-error" class="tweet-error hidden">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span class="error-text"></span>
+        </div>
+        
         <form method="POST" action="/api/tweets" id="tweet-form">
           <label for="tweet-text">What are you humming about?</label>
           <textarea name="text" id="tweet-text"></textarea>
