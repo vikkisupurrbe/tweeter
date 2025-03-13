@@ -16,18 +16,6 @@ $(document).ready(function () {
     
     // disallow submission when the tweet area is empty, or > 140 limit
     const tweetText = $("#tweet-text").val().trim(); // trim spaces
-    // form validation function
-    const isTweetValid = function(tweet) {
-      if (tweet.length === 0) {
-        alert("Tweet content cannot be empty!");
-        return false;
-      }
-      if (tweet.length > 140) {
-        alert("Character count cannot go over 140!");
-        return false;
-      }
-      return true;
-    }
 
     // validate tweet before sending
     if (!isTweetValid(tweetText)) {
@@ -105,3 +93,16 @@ $(document).ready(function () {
   loadTweets()
 
 });
+
+// form validation function
+const isTweetValid = function(tweet) {
+  if (tweet.length === 0) {
+    alert("Tweet content cannot be empty!");
+    return false;
+  }
+  if (tweet.length > 140) {
+    alert("Character count cannot go over 140!");
+    return false;
+  }
+  return true;
+}
