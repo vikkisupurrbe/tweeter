@@ -43,6 +43,13 @@ $(document).ready(function () {
     })
   });
 
+  // escape function to prevent XSS attacks
+  const escape = function (str) {
+    let div = document.createElement("div");
+    div.appendChild(document.createTextNode(str));
+    return div.innerHTML;
+  };
+
   // dynamically fetching tweets
   // fake data taken from initial-tweets.json
   const createTweetElement = function(tweet) {
@@ -55,7 +62,7 @@ $(document).ready(function () {
           </div>
           <span class="username">${tweet.user.handle}</span>
         </header>
-        <p class="tweet-text">${tweet.content.text}</p>
+        <p class="tweet-text">${escape(tweet.content.text)}</p>
         <footer>
           <div class="timestamp">${timeago.format(tweet.created_at)}</div>
           <div class="actions">
