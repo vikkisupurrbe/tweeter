@@ -34,13 +34,14 @@ $(document).ready(function () {
       data: formData,
       success: function (response) {
         console.log(`Tweet submitted successfully: ${formData}`, response);
-        // clear the form after a successful submission
         // hide error if it;s a successful submission
         errorDiv.slideUp();
         // render the last tweet
         loadTweets();
-        renderTweets(); // TODO:
+        // clear the form after a successful submission
         $("#tweet-text").val("");
+        // reset counter back to 140 after submitting the new tweet
+        $("#tweet-form .counter").text(140);
       },
       error: function(xhr, status, error) {
         console.log("Error submitting tweet:", xhr.responseText);
@@ -92,7 +93,7 @@ $(document).ready(function () {
       }
       $("#tweet-text").val("");
     }
-  // renderTweets(data);
+
   const loadTweets = function() {
     $.ajax({
       url: "/api/tweets",
