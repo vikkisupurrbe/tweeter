@@ -20,7 +20,7 @@ header h2 {
   font-weight: 400;
 }
 
-/* Responsive design*/
+/* Responsive design */
 @media screen and (min-width: 1024px) {
   .profile{
     width: 50%;

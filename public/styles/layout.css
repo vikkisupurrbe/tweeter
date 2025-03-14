@@ -30,7 +30,7 @@ main {
   background-color: inherit;
 }
 
-/* Responsive design*/
+/* Responsive design */
 @media screen and (min-width: 1024px) {
   body {
     display: flex;
