@@ -2,15 +2,28 @@
  * Navigation bar
  */
 
- header {
-   width: 100%;
-   height: 400px;
-   background-color: #f4ae2e;
-   background-image: url("https://www.transparenttextures.com/patterns/arches.png");
-   background-repeat: repeat; /* Ensures the texture tiles properly */
-   background-size: auto; /* Adjust based on texture pattern */
-   display: flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
- }
+header {
+  width: 100%;
+  height: 400px;
+  background-color: #f4ae2e;
+  background-image: url("https://www.transparenttextures.com/patterns/arches.png");
+  background-repeat: repeat;
+  background-size: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+header h2 {
+  color:#f4f1ec;
+  font-weight: 400;
+}
+
+/* Responsive design*/
+@media screen and (min-width: 1024px) {
+  .profile{
+    width: 50%;
+    margin: 1em;
+  }
+}

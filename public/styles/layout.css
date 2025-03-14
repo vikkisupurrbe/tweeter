@@ -29,3 +29,15 @@ main {
   margin: 0 auto;
   background-color: inherit;
 }
+
+/* Responsive design*/
+@media screen and (min-width: 1024px) {
+  body {
+    display: flex;
+    flex-direction: row;
+    gap: 1em;
+  }
+  main {
+    padding: 1em;
+  }
+}

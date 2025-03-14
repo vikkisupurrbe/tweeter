@@ -35,11 +35,12 @@ $(document).ready(function () {
       success: function (response) {
         console.log(`Tweet submitted successfully: ${formData}`, response);
         // clear the form after a successful submission
-        $("#tweet-text").val("");
         // hide error if it;s a successful submission
         errorDiv.slideUp();
         // render the last tweet
         loadTweets();
+        renderTweets(); // TODO:
+        $("#tweet-text").val("");
       },
       error: function(xhr, status, error) {
         console.log("Error submitting tweet:", xhr.responseText);
@@ -84,19 +85,20 @@ $(document).ready(function () {
   // loops through tweets
   // calls createTweetElement for each tweet
   // takes return value and appends it to the tweets container
-  // $("#tweets-container").empty();
+  $("#tweets-container").empty();
     for (const tweet of tweets) {
       const $tweetElement = createTweetElement(tweet);
       $("#tweets-container").prepend($tweetElement);
       }
+      $("#tweet-text").val("");
     }
-
   // renderTweets(data);
   const loadTweets = function() {
     $.ajax({
       url: "/api/tweets",
       method: "GET",
       success: function(data) {
+        console.log(data, "data", $("#tweets-container").length);
         renderTweets(data);
       }
     });
